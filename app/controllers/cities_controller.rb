@@ -7,6 +7,7 @@ class CitiesController < ApplicationController
 
   def show
     @city = City.find(params[:id])
+    @posts = @city.posts
   end
 
   def new
@@ -15,6 +16,7 @@ class CitiesController < ApplicationController
 
   def create
     @city = City.new(city_params)
+    @city.user = current_user
     if @city.save
       redirect_to cities_path
     else

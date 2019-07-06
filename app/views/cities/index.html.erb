@@ -5,14 +5,21 @@
           世界如此迷人 那么多地方想去瞧瞧
         </small>
 
+        <%= link_to("Add a City", new_city_path(@city), class: "btn btn-primary pull-right")%>
+
+      <br> <br>
+
       <table class="table table-striped">
         <tbody>
+          <% @cities.each do |city| %>
           <tr>
-            <% @cities.each do |city| %>
+
              <td><%= link_to(city.title, city_path(city)) %></td>
              <td><%= city.created_at.to_s(:short) %></td>
-            <% end %>
+             <td><%= link_to("Edit", edit_city_path(city), class:"btn btn-sm btn-info")%></td>
+
           </tr>
+          <% end %>
         </tbody>
       </table>
   </div>
