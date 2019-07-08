@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :citites
+    resources :cities
   end
 
   root 'cities#index'
