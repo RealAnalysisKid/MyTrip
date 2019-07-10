@@ -5,18 +5,27 @@
 <br><br>
 
 <table class="table table-boldered">
+  <thead>
+    <tr>
+      <td>城市</td>
+      <td>创建日期</td>
+      <td>操作选项</td>
+    </tr>
+  </thead>
   <% @cities.each do |city| %>
   <tr>
+
     <td>
       <%= link_to(city.title, admin_city_path(city)) %>
+    </td>
+    <td>
+      <%= city.created_at.to_s(:short) %>
     </td>
     <td>
       <%= link_to("Edit", edit_admin_city_path(city), class:"btn btn-sm btn-info") %>
       <%= link_to("Destroy", admin_city_path(city), :method => :delete, class:"btn btn-sm btn-danger", :data => { :confirm => "Are You Sure?" }) %>
     </td>
-    <td>
-      <%= city.created_at.to_s(:short) %>
-    </td>
+
   </tr>
   <% end %>
 </table>

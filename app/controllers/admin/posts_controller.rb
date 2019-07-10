@@ -18,7 +18,7 @@ class Admin::PostsController < ApplicationController
     @post.user = current_user
 
     if @post.save
-      redirect_to admin_posts_path(@city)
+      redirect_to admin_city_path(@city)
     else
       render :new
     end
@@ -33,7 +33,7 @@ class Admin::PostsController < ApplicationController
     @city = City.find(params[:city_id])
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      redirect_to admin_posts_path(@city), notice: "Post Updated"
+      redirect_to admin_city_path(@city), notice: "Post Updated"
     else
       render :edit
     end
@@ -43,7 +43,7 @@ class Admin::PostsController < ApplicationController
     @city = City.find(params[:city_id])
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to admin_posts_path(@city), alert: "Post Deleted"
+    redirect_to admin_city_path(@city), alert: "Post Deleted"
   end
 
   private
