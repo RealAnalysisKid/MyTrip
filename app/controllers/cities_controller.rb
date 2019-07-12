@@ -2,12 +2,12 @@ class CitiesController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @cities = City.all
+    @cities = City.where(:is_hidden => false)
   end
 
   def show
     @city = City.find(params[:id])
-    @posts = @city.posts
+    @posts = @city.posts.where(:is_hidden => false)
   end
 
   def new
@@ -46,7 +46,7 @@ class CitiesController < ApplicationController
   private
 
   def city_params
-    params.require(:city).permit(:title, :description)
+    params.require(:city).permit(:title, :description, :is_hidden)
   end
 
 end

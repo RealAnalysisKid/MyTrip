@@ -46,6 +46,6 @@ class Admin::CitiesController < ApplicationController
   private
 
   def city_params
-    params.require(:city).permit(:title, :description)
+    params.require(:city).permit(:title, :description, :is_hidden)
   end
 end

@@ -12,10 +12,12 @@
       <td>操作选项</td>
     </tr>
   </thead>
+
   <% @cities.each do |city| %>
   <tr>
 
     <td>
+      <%= render_city_status(city) %>
       <%= link_to(city.title, admin_city_path(city)) %>
     </td>
     <td>
@@ -28,4 +30,5 @@
 
   </tr>
   <% end %>
+
 </table>

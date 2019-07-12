@@ -10,7 +10,10 @@
   <table class="table table-striped">
     <% @posts.each do |post| %>
     <tr>
-      <td><%= link_to(post.address,admin_city_post_path(@city, post) ) %></td>
+      <td>
+        <%= render_post_status(@city, post) %>
+        <%= link_to(post.address,admin_city_post_path(@city, post) ) %>
+      </td>
       <td><%= post.reason %></td>
       <td><%= link_to("Edit", edit_admin_city_post_path(@city, post), class:"btn btn-sm btn-info") %></td>
       <td><%= link_to("Delete", admin_city_post_path(@city, post), method: :delete, class:"btn btn-sm btn-danger") %></td>
