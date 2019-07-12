@@ -19,6 +19,9 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><%= link_to("Admin Panel", admin_cities_path) %></li>
+                        <li><%= link_to("我的城市", account_cities_path) %></li>
+                        <li><%= link_to("我的攻略", account_posts_path) %></li>
+                        <li class="divider"></li>
                         <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                     </ul>
                   </li>

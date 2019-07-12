@@ -1,0 +1,30 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> 我的攻略 </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Reason </th>
+        <th> City </th>
+        <th> Last Update </th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @posts.each do |post| %>
+        <tr>
+          <td>
+            <%= render_post_status(post.city, post) %> 
+            <%= link_to(post.reason, city_post_path(post.city, post)) %>
+          </td>
+          <td> <%= post.city.title %> </td>
+          <td> <%= post.updated_at %> </td>
+          <td> <%= link_to('Edit', edit_city_post_path(post.city, post), class: "btn btn-default btn-xs") %></td>
+          <td> <%= link_to('Delete', city_post_path(post.city, post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs") %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

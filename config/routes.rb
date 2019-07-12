@@ -12,6 +12,11 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :account do
+    resources :cities
+    resources :posts
+  end
+
   root 'cities#index'
 
 end
