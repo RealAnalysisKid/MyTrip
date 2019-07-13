@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :posts
   has_many :cities
+
+  def admin?
+    is_admin
+  end
 end

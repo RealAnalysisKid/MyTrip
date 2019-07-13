@@ -14,3 +14,12 @@ u.password_confirmation = "111111"
 
 u.is_admin = true
 u.save
+
+
+u = User.new
+u.email = "xzhang@deloitte.com.cn"
+
+u.password = "111111"
+u.password_confirmation = "111111"
+
+u.save

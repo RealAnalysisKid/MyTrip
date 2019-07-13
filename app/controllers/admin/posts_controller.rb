@@ -1,5 +1,6 @@
 class Admin::PostsController < ApplicationController
   before_action :authenticate_user!
+  before_action :admin_is_required
 
   def show
     @city = City.find(params[:city_id])

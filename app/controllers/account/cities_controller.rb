@@ -4,4 +4,9 @@ class Account::CitiesController < ApplicationController
   def index
     @cities = current_user.cities
   end
+
+  def show
+    @city = City.find(params[:id])
+    @post = current_user.posts
+  end
 end

@@ -1,5 +1,6 @@
 class Admin::CitiesController < ApplicationController
   before_action :authenticate_user!
+  before_action :admin_is_required
 
   def index
     @cities = City.all
