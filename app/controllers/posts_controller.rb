@@ -4,6 +4,11 @@ class PostsController < ApplicationController
   def show
     @city = City.find(params[:city_id])
     @post = Post.find(params[:id])
+
+    if @post.is_hidden
+      flash[:warning] = "抱歉 您没有权限查看此文档"
+      redirect_to root_path
+    end
   end
 
   def new
