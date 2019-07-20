@@ -16,7 +16,17 @@
 
              <td><%= link_to(city.title, city_path(city)) %></td>
              <td><%= city.created_at.to_s(:short) %></td>
-             <td><%= link_to("Edit", edit_city_path(city), class:"btn btn-sm btn-info")%></td>
+             <td>
+               <% if current_user == city.user %>
+                <%= link_to("Edit", edit_city_path(city), class:"btn btn-sm btn-info")%>
+               <% end %>
+             </td>
+
+             <td>
+               <% if current_user == city.user %>
+                <%= link_to("Delete", city_path(city), method: :delete, class:"btn btn-sm btn-danger") %>
+               <% end %>
+             </td>
 
           </tr>
           <% end %>

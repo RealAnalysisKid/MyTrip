@@ -9,7 +9,16 @@
   <% @posts.each do |post| %>
   <tr>
     <td><%= link_to(post.address, city_post_path(@city, post)) %></td>
-    <td><%= link_to("Edit", edit_city_post_path(@city, post) , class:"btn btn-sm btn-default")%></td>
+    <td>
+      <% if current_user == post.user %>
+        <%= link_to("Edit", edit_city_post_path(@city, post) , class:"btn btn-sm btn-default")%>
+      <% end %>
+    </td>
+    <td>
+        <% if current_user == post.user %>
+          <%= link_to("Delete", city_post_path(@city, post) , method: :delte, class:"btn btn-sm btn-danger")%>
+        <% end %>
+    </td>
   </tr>
   <% end %>
 

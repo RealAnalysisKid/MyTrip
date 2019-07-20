@@ -21,8 +21,16 @@
           </td>
           <td> <%= post.city.title %> </td>
           <td> <%= post.updated_at %> </td>
-          <td> <%= link_to('Edit', edit_city_post_path(post.city, post), class: "btn btn-default btn-xs") %></td>
-          <td> <%= link_to('Delete', city_post_path(post.city, post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs") %></td>
+          <td>
+            <% if current_user == post.user %>
+              <%= link_to('Edit', edit_city_post_path(post.city, post), class: "btn btn-default btn-xs") %>
+            <% end %>
+          </td>
+          <td>
+            <% if current_user == post.user %>
+              <%= link_to('Delete', city_post_path(post.city, post), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-default btn-xs") %>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
