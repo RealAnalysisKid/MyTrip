@@ -7,6 +7,6 @@ class Account::CitiesController < ApplicationController
 
   def show
     @city = City.find(params[:id])
-    @posts = current_user.posts
+    @posts = @city.posts
   end
 end

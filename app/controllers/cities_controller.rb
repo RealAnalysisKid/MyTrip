@@ -9,7 +9,7 @@ class CitiesController < ApplicationController
     @city = City.find(params[:id])
     @posts = @city.posts.where(:is_hidden => false)
 
-    if @city.is_hidden
+    if @city.is_hidden && @city.user != current_user
       flash[:warning] = "抱歉 您没有权限查看此文档"
       redirect_to root_path
     end

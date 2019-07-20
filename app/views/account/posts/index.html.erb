@@ -16,7 +16,7 @@
       <% @posts.each do |post| %>
         <tr>
           <td>
-            <%= render_post_status(post.city, post) %> 
+            <%= render_post_status(post.city, post) %>
             <%= link_to(post.reason, city_post_path(post.city, post)) %>
           </td>
           <td> <%= post.city.title %> </td>

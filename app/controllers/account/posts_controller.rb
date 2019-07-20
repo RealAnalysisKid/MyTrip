@@ -7,6 +7,6 @@ class Account::PostsController < ApplicationController
 
   def show
     @city = City.find(params[:city_id])
-    @post = Post.find(params[:id])
+    @post = @city.posts.find(params[:id])
   end
 end
