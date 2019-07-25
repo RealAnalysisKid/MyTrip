@@ -1,0 +1,35 @@
+<h1> <%= @city.title %> </h1>
+
+<p>
+  <%= simple_format(@city.description) %>
+
+  <div class="pull-right">
+    <%= link_to("Add a Post", new_admin_city_post_path(@city), class:"btn btn-md btn-primary") %>
+  </div>
+
+  <table class="table table-striped">
+    <% @posts.each do |post| %>
+    <tr>
+      <td>
+        <%= render_post_status(@city, post) %>
+        <%= link_to(post.address,admin_city_post_path(@city, post) ) %>
+      </td>
+      <td><%= post.reason %></td>
+      <td>
+        <%= link_to("Edit", edit_admin_city_post_path(@city, post), class:"btn btn-xs btn-info") %>
+        <%= link_to("Delete", admin_city_post_path(@city, post), method: :delete, class:"btn btn-xs btn-danger") %>
+
+        <% if post.is_hidden %>
+          <%= link_to("Publish", publish_admin_city_post_path(@city, post), method: :post, :class => "btn btn-xs btn-default") %>
+        <% else %>
+          <%= link_to("Hide", hide_admin_city_post_path(@city, post), method: :post, :class => "btn btn-xs btn-default") %>
+        <% end %>
+      </td>
+
+
+
+    </tr>
+    <% end %>
+  </table>
+
+</p>
