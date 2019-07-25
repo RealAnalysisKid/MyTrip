@@ -48,6 +48,20 @@ class Admin::PostsController < ApplicationController
     redirect_to admin_city_path(@city), alert: "Post Deleted"
   end
 
+  def publish
+    @city = City.find(params[:city_id])
+    @post = Post.find(params[:id])
+    @post.publish!
+    redirect_to :back
+  end
+
+  def hide
+    @city = City.find(params[:city_id])
+    @post = Post.find(params[:id])
+    @post.hide!
+    redirect_to :back
+  end
+
   private
 
   def post_params

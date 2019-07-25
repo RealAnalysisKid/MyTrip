@@ -8,7 +8,16 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :cities do
-      resources :posts
+      member do
+        post :publish
+        post :hide
+      end
+      resources :posts do
+        member do
+          post :publish
+          post :hide
+        end
+      end
     end
   end
 

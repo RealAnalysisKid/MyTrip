@@ -20,9 +20,9 @@
         <%= link_to("Delete", admin_city_post_path(@city, post), method: :delete, class:"btn btn-xs btn-danger") %>
 
         <% if post.is_hidden %>
-          <%= link_to("Publish", "#", :class => "btn btn-xs btn-default") %>
+          <%= link_to("Publish", publish_admin_city_post_path(@city, post), method: :post, :class => "btn btn-xs btn-default") %>
         <% else %>
-          <%= link_to("Hide", "#", :class => "btn btn-xs btn-default") %>
+          <%= link_to("Hide", hide_admin_city_post_path(@city, post), method: :post, :class => "btn btn-xs btn-default") %>
         <% end %>
       </td>
 

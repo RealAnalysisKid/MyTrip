@@ -45,6 +45,20 @@ class Admin::CitiesController < ApplicationController
     redirect_to admin_cities_path, alert: "City Deleted"
   end
 
+  def publish
+    @city = City.find(params[:id])
+    @city.publish!
+
+    redirect_to :back
+  end
+
+  def hide
+    @city = City.find(params[:id])
+    @city.hide!
+    
+    redirect_to :back
+  end
+
   private
 
   def city_params
