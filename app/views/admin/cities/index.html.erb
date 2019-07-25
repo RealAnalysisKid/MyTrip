@@ -24,8 +24,14 @@
       <%= city.created_at.to_s(:short) %>
     </td>
     <td>
-      <%= link_to("Edit", edit_admin_city_path(city), class:"btn btn-sm btn-info") %>
-      <%= link_to("Destroy", admin_city_path(city), :method => :delete, class:"btn btn-sm btn-danger", :data => { :confirm => "Are You Sure?" }) %>
+      <%= link_to("Edit", edit_admin_city_path(city), class:"btn btn-xs btn-info") %>
+      <%= link_to("Destroy", admin_city_path(city), :method => :delete, class:"btn btn-xs btn-danger", :data => { :confirm => "Are You Sure?" }) %>
+
+      <% if city.is_hidden %>
+        <%= link_to("Publish", "#", :class => "btn btn-xs btn-default") %>
+      <% else %>
+        <%= link_to("Hide", "#", :class => "btn btn-xs btn-default") %>
+      <% end %>
     </td>
 
   </tr>
