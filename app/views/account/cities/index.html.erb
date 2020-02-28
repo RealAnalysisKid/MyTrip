@@ -1,0 +1,31 @@
+<div class="col-md-12">
+
+  <h2 class="text-center"> 我感兴趣的城市 </h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> # </th>
+        <th> Title </th>
+        <th> Description </th>
+        <th> Post Count </th>
+        <th> Last Update </th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cities.each do |city| %>
+        <tr>
+          <td> # </td>
+          <td>
+            <%= render_city_status(city) %>
+            <%= link_to(city.title, account_city_path(city)) %>
+          </td>
+          <td> <%= city.description %> </td>
+          <td> <%= city.posts.count %> </td>
+          <td> <%= city.updated_at %> </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
