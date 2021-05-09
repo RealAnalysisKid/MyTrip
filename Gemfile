@@ -41,8 +41,7 @@ gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'rails-erd', group: :development
 
-gem 'mysql2'
-gem 'activerecord-mysql2-adapter'
+gem 'mysql2', '~> 0.4.0'
 
 group :development, :test do
   gem 'capistrano-rails'

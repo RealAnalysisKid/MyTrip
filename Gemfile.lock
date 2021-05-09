@@ -33,8 +33,6 @@ GEM
       activemodel (= 5.0.7.2)
       activesupport (= 5.0.7.2)
       arel (~> 7.0)
-    activerecord-mysql2-adapter (0.0.3)
-      mysql2
     activesupport (5.0.7.2)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
@@ -112,7 +110,7 @@ GEM
     mini_mime (1.0.1)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
-    mysql2 (0.5.3)
+    mysql2 (0.4.10)
     net-scp (3.0.0)
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
@@ -215,7 +213,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  activerecord-mysql2-adapter
   awesome_rails_console
   bootstrap-sass
   capistrano-passenger
@@ -226,7 +223,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
-  mysql2
+  mysql2 (~> 0.4.0)
   pry
   puma (~> 3.0)
   rails (~> 5.0.7, >= 5.0.7.2)
