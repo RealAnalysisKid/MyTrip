@@ -42,6 +42,7 @@ gem 'font-awesome-rails'
 gem 'rails-erd', group: :development
 
 gem 'mysql2'
+gem 'activerecord-mysql2-adapter'
 
 group :development, :test do
   gem 'capistrano-rails'
