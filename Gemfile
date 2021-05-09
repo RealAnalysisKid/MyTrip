@@ -41,7 +41,15 @@ gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'rails-erd', group: :development
 
+
+group :production, :starting do
+  gem 'mysql2'  
+end
+
+
 group :development, :test do
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
   gem 'awesome_rails_console'
