@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://gems.ruby-china.com'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -41,7 +41,12 @@ gem 'simple_form'
 gem 'font-awesome-rails'
 gem 'rails-erd', group: :development
 
+gem 'mysql2'
+
 group :development, :test do
+  gem 'capistrano-rails'
+  gem 'capistrano-passenger'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
   gem 'awesome_rails_console'
