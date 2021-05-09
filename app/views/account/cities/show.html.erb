@@ -1,0 +1,41 @@
+<div class="col-md-12">
+
+
+
+  <div class="pull-right">
+    <%= link_to("Add a Post", new_city_post_path(@city), class:"btn btn-sm btn-primary") %>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th> Reason </th>
+        <th> City </th>
+        <th> Last Update </th>
+        <th colspan="2"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @posts.each do |post| %>
+      <tr>
+        <td>
+          <%= render_post_status(@city, post) %>
+          <%= link_to(post.address,city_post_path(@city, post) ) %>
+        </td>
+        <td><%= post.reason %></td>
+        <td>
+          <% if current_user == post.user %>
+            <%= link_to("Edit", edit_city_post_path(@city, post), class:"btn btn-sm btn-info") %>
+          <% end %>
+        </td>
+        <td>
+          <% if current_user == post.user %>
+            <%= link_to("Delete", city_post_path(@city, post), method: :delete, class:"btn btn-sm btn-danger") %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
