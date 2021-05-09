@@ -47,8 +47,10 @@ gem 'mysql2', '>= 0.4.4'
 
 
 group :development, :test do
+  gem 'capistrano', '~> 3.11'
   gem 'capistrano-rails'
-  gem 'capistrano-passenger'
+  gem 'capistrano-passenger', '~> 0.2.0'
+  gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
   gem 'awesome_rails_console'
