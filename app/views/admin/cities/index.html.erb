@@ -1,0 +1,40 @@
+<div class="pull-right">
+  <%= link_to("Add a City", new_admin_city_path, :class => "btn btn-primary" ) %>
+</div>
+
+<br><br>
+
+<table class="table table-boldered">
+  <thead>
+    <tr>
+      <td>城市</td>
+      <td>创建日期</td>
+      <td>操作选项</td>
+    </tr>
+  </thead>
+
+  <% @cities.each do |city| %>
+  <tr>
+
+    <td>
+      <%= render_city_status(city) %>
+      <%= link_to(city.title, admin_city_path(city)) %>
+    </td>
+    <td>
+      <%= city.created_at.to_s(:short) %>
+    </td>
+    <td>
+      <%= link_to("Edit", edit_admin_city_path(city), class:"btn btn-xs btn-info") %>
+      <%= link_to("Destroy", admin_city_path(city), :method => :delete, class:"btn btn-xs btn-danger", :data => { :confirm => "Are You Sure?" }) %>
+
+      <% if city.is_hidden %>
+        <%= link_to("Publish", publish_admin_city_path(city), method: :post, :class => "btn btn-xs btn-default") %>
+      <% else %>
+        <%= link_to("Hide", hide_admin_city_path(city), method: :post, :class => "btn btn-xs btn-default") %>
+      <% end %>
+    </td>
+
+  </tr>
+  <% end %>
+
+</table>
