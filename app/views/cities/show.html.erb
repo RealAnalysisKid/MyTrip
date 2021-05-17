@@ -1,0 +1,16 @@
+<h2><%= @city.title %></h2>
+
+<h4><%= @city.description %></h4>
+
+<%= link_to("Write a Post", new_city_post_path(@city), class: "btn btn-default pull-right")%>
+
+<table class="table table-striped">
+
+  <% @posts.each do |post| %>
+  <tr>
+    <td><%= link_to(post.address, city_post_path(@city, post)) %></td>
+    <td><%= link_to("Edit", edit_city_post_path(@city, post) , class:"btn btn-sm btn-default")%></td>
+  </tr>
+  <% end %>
+
+</table>
