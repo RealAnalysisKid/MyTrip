@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-12">
+      <h2>城市</h2>
+        <small style="text-left">
+          世界如此迷人 那么多地方想去瞧瞧
+        </small>
+
+        <%= link_to("Add a City", new_city_path(@city), class: "btn btn-primary pull-right")%>
+
+      <br> <br>
+
+      <table class="table table-striped">
+        <tbody>
+          <% @cities.each do |city| %>
+          <tr>
+
+             <td><%= link_to(city.title, city_path(city)) %></td>
+             <td><%= city.created_at.to_s(:short) %></td>
+             <td>
+               <% if current_user == city.user %>
+                <%= link_to("Edit", edit_city_path(city), class:"btn btn-sm btn-info")%>
+               <% end %>
+             </td>
+
+             <td>
+               <% if current_user == city.user %>
+                <%= link_to("Delete", city_path(city), method: :delete, class:"btn btn-sm btn-danger") %>
+               <% end %>
+             </td>
+
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+</div>
