@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190713061337) do
+ActiveRecord::Schema.define(version: 20190720144549) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "title"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 20190713061337) do
     t.datetime "updated_at",                 null: false
     t.integer  "user_id"
     t.integer  "city_id"
+    t.string   "token"
   end
 
   create_table "users", force: :cascade do |t|
