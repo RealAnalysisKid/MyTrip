@@ -1,0 +1,15 @@
+current directory: /Users/RealAnalysis/MyTrip/vendor/cache/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/RealAnalysis/.rbenv/versions/3.0.1/bin/ruby -I /Users/RealAnalysis/.rbenv/versions/3.0.1/lib/ruby/3.0.0 -r ./siteconf20210601-74454-rjs19b.rb extconf.rb
+creating Makefile
+
+current directory: /Users/RealAnalysis/MyTrip/vendor/cache/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= clean
+
+current directory: /Users/RealAnalysis/MyTrip/vendor/cache/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\=
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/RealAnalysis/MyTrip/vendor/cache/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= install
+/usr/local/bin/ginstall -c -m 0755 cruby.bundle ./.gem.20210601-74454-cnoc3x/skiptrace/internal
