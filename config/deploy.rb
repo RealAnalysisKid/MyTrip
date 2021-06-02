@@ -30,10 +30,18 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
-set :default_env, {
-   PATH: '$HOME/.npm-packages/bin/:$PATH',
-   NODE_ENVIRONMENT: 'production'
-}
+#set :default_env, {
+#   "PATH" => "/home/ubuntu/.nvm/versions/node/v6.9.5/bin:$PATH",
+#   NODE_ENVIRONMENT: 'production'
+#}
+
+set :yarn_target_path, -> { release_path.join('client') } #
+set :yarn_flags, '--production --silent --no-progress'    # default
+set :yarn_roles, :all                                     # default
+set :yarn_env_variables, {}
+
+
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system node_modules client/node_modules}
 
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
