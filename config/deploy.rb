@@ -35,14 +35,6 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 #   NODE_ENVIRONMENT: 'production'
 #}
 
-set :yarn_target_path, -> { release_path.join('client') } #
-set :yarn_flags, '--production --silent --no-progress'    # default
-set :yarn_roles, :all                                     # default
-set :yarn_env_variables, {}
-
-
-set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system node_modules client/node_modules}
-
 # Default value for local_user is ENV['USER']
 # set :local_user, -> { `git config user.name`.chomp }
 
