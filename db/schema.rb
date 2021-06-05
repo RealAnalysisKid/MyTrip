@@ -12,8 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2019_07_13_061337) do
 
-  create_table "cities", force: :cascade do |t|
-    t.string "title"
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "cities", id: :serial, force: :cascade do |t|
+    t.text "title"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -21,13 +24,13 @@ ActiveRecord::Schema.define(version: 2019_07_13_061337) do
     t.boolean "is_hidden", default: true
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string "address"
+  create_table "posts", id: :serial, force: :cascade do |t|
+    t.text "address"
     t.text "reason"
-    t.string "price"
+    t.text "price"
     t.text "necessity"
     t.text "reservation"
-    t.string "best_time"
+    t.text "best_time"
     t.boolean "is_hidden", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -35,10 +38,10 @@ ActiveRecord::Schema.define(version: 2019_07_13_061337) do
     t.integer "city_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.text "email", default: "", null: false
+    t.text "encrypted_password", default: "", null: false
+    t.text "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
