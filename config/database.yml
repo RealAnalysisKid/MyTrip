@@ -25,4 +25,4 @@ production:
   <<: *default
   database: MyTrip_production
   username: RealAnalysis
-  password: 
+  password: <%= ENV['PROJECT_DATABASE_PASSWORD'] %>
