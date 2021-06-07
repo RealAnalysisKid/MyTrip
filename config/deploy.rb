@@ -33,7 +33,7 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bund
 set :default_env, {
 #   "PATH" => "/home/ubuntu/.nvm/versions/node/v6.9.5/bin:$PATH",
 #   或者 PATH: '$HOME/.npm-packages/bin/:$PATH',
-   PATH: '/usr/bin/:$PATH'
+   PATH: '/usr/bin/:$PATH',
    NODE_ENVIRONMENT: 'production'
 }
 
